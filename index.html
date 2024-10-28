@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="content-wrap">
+            <h1 class="animate-slide-up">Full Stack Developer</h1>
+            <p class="animate-slide-up">I code whatever makes my life easier</p>
+            <a href="#contact" class="cta-button animate-slide-up">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="content-wrap">
+            <h2>About Me</h2>
+            <p>I'm a passionate Full Stack Developer with expertise in both frontend and backend technologies. I love creating efficient, scalable, and user-friendly applications that solve real-world problems.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="content-wrap">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript, React</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend</h3>
+                    <p>Node.js, Python, Java, SQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Database</h3>
+                    <p>MongoDB, PostgreSQL, MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools</h3>
+                    <p>Git, AWS, XAMPP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="content-wrap">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Rao Appartment RMS</h3>
+                    <p>Full-stack Appartment Rent Management System</p>
+                    <a href="https://github.com/Pranshuxyadav/RAO-appartment-RMS" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>Desktop Widget</h3>
+                    <p>Desktop Widget which creates random alphabets to give your desktop an asethetic look.</p>
+                    <a href="https://github.com/Pranshuxyadav/desktop-widget" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>Multitool</h3>
+                    <p>A multitool which can make your life easier with the ability to open custom apps and links.</p>
+                    <a href="https://github.com/Pranshuxyadav/multitool" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>FoodConnect</h3>
+                    <p>Food and Food Waste Management System</p>
+                    <a href="https://github.com/Pranshuxyadav/FoodConnect" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>DiscoveryCars</h3>
+                    <p>Full-Stack Website for used car dealership, using web scraping</p>
+                    <a href="https://github.com/Pranshuxyadav/discoverycars" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>Crop Recommendation System</h3>
+                    <p>ML and DL based website which recommends best crop to grow, fertilizers to use and the diseases caught by your crops.</p>
+                    <a href="https://github.com/Pranshuxyadav/crop-recomendation-system" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content-wrap">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="mailto:pranshuyadav01@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+                <a href="https://github.com/Pranshuxyadav" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/pranshu-yadav-472725221/" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Full Stack Developer</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
