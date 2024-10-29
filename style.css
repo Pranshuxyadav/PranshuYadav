@@ -155,8 +155,88 @@ section.visible {
     text-align: center;
 }
 
+.hero .content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hero img {
+    height: 25%;
+    width: 25%;
+}
+
+
+.hero .image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+  
+.hero .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+  
+  .hero .image-container::before,
+  .hero .image-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: conic-gradient(
+      from var(--angle),
+      #ff0000,
+      #ff7300,
+      #3f7a27,
+      #229e89,
+      #002bff,
+      #6016af,
+      #ff0000
+    );
+    border-radius: 50%;
+    z-index: 0;
+    animation: rotate 4s linear infinite;
+  }
+  
+  .hero .image-container::before {
+    background: conic-gradient(
+        #ff0000, #ff7300, #3f7a27, #229e89,
+        #002bff, #6016af, #ff0000
+    );
+    animation: rotate 4s linear infinite;
+}
+
+.hero .image-container::after {
+    background: inherit;
+    filter: blur(10px);
+    opacity: 0.7;
+}
+  
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  @keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: clamp(0.5rem, 2vw, 1rem);
     background: linear-gradient(135deg, var(--primary-color), #8a2be2);
     -webkit-background-clip: text;
